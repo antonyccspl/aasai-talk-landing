@@ -115,12 +115,12 @@ function App() {
                 {APK_DOWNLOAD_URL ? (
                   <a className="button button--secondary" href={APK_DOWNLOAD_URL} download>
                     <span className="button__platform-icon" aria-hidden="true">↓</span>
-                    Download for Android
+                    Download Android preview
                   </a>
                 ) : (
                   <button className="button button--secondary button--waiting" type="button" disabled>
                     <span className="button__platform-icon" aria-hidden="true">↓</span>
-                    Android app coming soon
+                    Android APK preview
                   </button>
                 )}
               </div>
@@ -275,15 +275,15 @@ function App() {
             <div className="platform-card__content">
               <p className="eyebrow"><span className="eyebrow__line" /> YOUR DEVICE, YOUR CHOICE</p>
               <h2>Ready when<br />you are.</h2>
-              <p>Use Aasai Talk in your browser today. Prefer an app? The Android download will be available here soon.</p>
+              <p>Use Aasai Talk in your browser today, or download the Android preview APK and start connecting on your phone.</p>
               <div className="platform-actions">
                 <a className="button button--primary" href={WEB_APP_URL} target="_blank" rel="noreferrer">
                   Open the web app <ArrowIcon diagonal />
                 </a>
                 {APK_DOWNLOAD_URL ? (
-                  <a className="button button--outline" href={APK_DOWNLOAD_URL} download>Get the Android app <span>↓</span></a>
+                  <a className="button button--outline" href={APK_DOWNLOAD_URL} download>Download Android preview <span>↓</span></a>
                 ) : (
-                  <button className="button button--outline button--waiting" type="button" disabled>Android download coming soon <span>↓</span></button>
+                  <button className="button button--outline button--waiting" type="button" disabled>Android preview unavailable <span>↓</span></button>
                 )}
               </div>
               <p className="platform-card__note">iPhone and iPad users can use the web app. An Android APK cannot be installed on iOS.</p>
@@ -293,7 +293,7 @@ function App() {
               <div className="platform-visual__orbit platform-visual__orbit--inner" />
               <div className="platform-visual__center"><img src="/aasai-talk-logo.jpg" alt="" /></div>
               <span className="platform-visual__tag platform-visual__tag--web"><i /> WEB APP</span>
-              <span className="platform-visual__tag platform-visual__tag--android">ANDROID <b>SOON</b></span>
+              <span className="platform-visual__tag platform-visual__tag--android">ANDROID <b>PREVIEW</b></span>
               <span className="platform-visual__spark">✳</span>
             </div>
           </div>
@@ -315,7 +315,7 @@ function App() {
           </div>
           <div className="footer-links">
             <div><span>EXPLORE</span><a href="#discover">Discover</a><a href="#how-it-works">How it works</a></div>
-            <div><span>GET STARTED</span><a href={WEB_APP_URL} target="_blank" rel="noreferrer">Open web app <ArrowIcon diagonal /></a><a href="#get-started">Android app <small>Coming soon</small></a></div>
+            <div><span>GET STARTED</span><a href={WEB_APP_URL} target="_blank" rel="noreferrer">Open web app <ArrowIcon diagonal /></a><a href={APK_DOWNLOAD_URL} download>Android APK <small>Preview</small></a></div>
             <div><span>INFORMATION</span><a href={`${WEB_APP_URL}settings/policies/privacy`} target="_blank" rel="noreferrer">Privacy policy <ArrowIcon diagonal /></a><a href={`${WEB_APP_URL}settings/policies/terms`} target="_blank" rel="noreferrer">Terms of use <ArrowIcon diagonal /></a></div>
           </div>
         </div>
