@@ -3,7 +3,7 @@ import "./App.css";
 
 const WEB_APP_URL = "https://aasai-talk.vercel.app/";
 const APK_DOWNLOAD_URL =
-  "https://github.com/antonyccspl/aasai-talk-landing/releases/download/android-preview-1.0.0-build-4/aasai-talk.apk";
+  "https://github.com/antonyccspl/aasai-talk-landing/releases/download/android-preview-1.0.0-build-5/aasai-talk.apk";
 const COPYRIGHT_YEAR = new Date().getFullYear();
 
 function ArrowIcon({ diagonal = false }) {
