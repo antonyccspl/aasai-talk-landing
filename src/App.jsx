@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
 
 const WEB_APP_URL = "https://aasai-talk.vercel.app/";
@@ -60,9 +60,15 @@ function App() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const closeMenu = () => setMenuOpen(false);
+  useEffect(() => {
+    const onKeyDown = (event) => { if (event.key === "Escape") setMenuOpen(false); };
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, []);
 
   return (
     <div className="site-shell" id="top">
+      <a className="skip-link" href="#main-content">Skip to content</a>
       <div className="announcement">
         <span className="announcement__dot" />
         A little more connection, wherever you are
@@ -76,12 +82,13 @@ function App() {
             className="menu-toggle"
             aria-label={menuOpen ? "Close navigation" : "Open navigation"}
             aria-expanded={menuOpen}
+            aria-controls="main-navigation"
             onClick={() => setMenuOpen((open) => !open)}
           >
             <span />
             <span />
           </button>
-          <nav className={menuOpen ? "main-nav main-nav--open" : "main-nav"} aria-label="Main navigation">
+          <nav id="main-navigation" className={menuOpen ? "main-nav main-nav--open" : "main-nav"} aria-label="Main navigation">
             <a href="#discover" onClick={closeMenu}>Discover</a>
             <a href="#how-it-works" onClick={closeMenu}>How it works</a>
             <a href="#get-started" onClick={closeMenu}>Get started</a>
@@ -98,7 +105,7 @@ function App() {
         </div>
       </header>
 
-      <main>
+      <main id="main-content">
         <section className="hero">
           <div className="container hero-grid">
             <div className="hero-copy">
@@ -126,11 +133,11 @@ function App() {
               </div>
               <p className="hero-note">
                 <span className="hero-note__check" aria-hidden="true">✓</span>
-                Use the web app on iPhone, iPad, or any device with a browser.
+                Use the web app on iPhone, iPad, or any device with a browser. For adults 18+.
               </p>
             </div>
 
-            <div className="hero-art" aria-label="A preview of conversations in Aasai Talk">
+            <div className="hero-art" aria-hidden="true">
               <div className="hero-art__halo" />
               <div className="float-card float-card--top">
                 <span className="float-card__icon float-card__icon--mint"><MessageIcon /></span>
@@ -154,7 +161,7 @@ function App() {
                     </div>
                     <div className="person-card__info">
                       <div><strong>Priya, 26</strong><span>Delhi</span></div>
-                      <button type="button" aria-label="Like Priya">♡</button>
+                      <span className="person-card__heart">♡</span>
                     </div>
                     <div className="person-card__tags"><span>Music</span><span>Travel</span></div>
                   </div>

@@ -1903,3 +1903,14 @@ h3 {
     display: none;
   }
 }
+
+/* Accessible navigation and comfortable reading on smaller screens. */
+.skip-link { position: fixed; z-index: 100; top: 8px; left: 8px; padding: 12px 16px; border-radius: 10px; background: #382035; color: #fff; transform: translateY(-150%); }
+.skip-link:focus { transform: translateY(0); }
+.person-card__heart { display: grid; place-items: center; width: 32px; height: 32px; color: #c83e59; font-size: 22px; }
+section[id] { scroll-margin-top: 96px; }
+@media (max-width: 700px) {
+  .hero-copy__body, .how-copy__body, .feature-card p, .step p, .platform-card__content > p:not(.eyebrow):not(.platform-card__note) { font-size: 14px; line-height: 1.6; }
+  .hero-note, .platform-card__note, .footer-bottom { font-size: 12px; line-height: 1.5; }
+  .main-nav a { min-height: 44px; }
+}
