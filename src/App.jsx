@@ -127,13 +127,13 @@ function App() {
                 ) : (
                   <button className="button button--secondary button--waiting" type="button" disabled>
                     <span className="button__platform-icon" aria-hidden="true">↓</span>
-                    Android APK preview
+                    Android APK unavailable
                   </button>
                 )}
               </div>
               <p className="hero-note">
                 <span className="hero-note__check" aria-hidden="true">✓</span>
-                Android APK is a preview release (212 MB). Use the web app on iPhone or iPad. For adults 18+.
+                Use the web app on iPhone, iPad, or any device with a browser. For adults 18+.
               </p>
             </div>
 
@@ -290,10 +290,10 @@ function App() {
                 {APK_DOWNLOAD_URL ? (
                   <a className="button button--outline" href={APK_DOWNLOAD_URL} download>Download Android APK <span>↓</span></a>
                 ) : (
-                  <button className="button button--outline button--waiting" type="button" disabled>Android preview unavailable <span>↓</span></button>
+                  <button className="button button--outline button--waiting" type="button" disabled>Android APK unavailable <span>↓</span></button>
                 )}
               </div>
-              <p className="platform-card__note">Android APK is a preview release (212 MB). iPhone and iPad users can use the web app.</p>
+              <p className="platform-card__note">iPhone and iPad users can use the web app. An Android APK cannot be installed on iOS.</p>
             </div>
             <div className="platform-visual" aria-hidden="true">
               <div className="platform-visual__orbit platform-visual__orbit--outer" />
