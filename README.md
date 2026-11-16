@@ -20,13 +20,13 @@ npm run preview
 ## Android download
 
 The Android buttons download the current preview APK from the
-[Aasai Talk Android 1.0.0 build 8 prerelease](https://github.com/antonyccspl/aasai-talk-landing/releases/tag/android-preview-1.0.0-build-8).
+[Aasai Talk Android 1.0.0 build 9 prerelease](https://github.com/antonyccspl/aasai-talk-landing/releases/tag/android-preview-1.0.0-build-9).
 The APK is about 212 MB, so it is hosted as a GitHub Release asset rather than
 committed to the repository or bundled into Vercel. The matching local copy in
 `public/apk/aasai-talk.apk` is intentionally ignored by Git.
 
 The current landing page APK has SHA-256
-`F7344E7BD909DBA51A77CDA2E5D2B6DF4902B30FFDB76324724308425658842A`.
+`00C6242A13368239032D0B081F022F2C1880FDADE2009B24D9E54A674D77FD4D`.
 To publish a replacement build, upload it as `aasai-talk.apk` to a new GitHub
 Release and update `APK_DOWNLOAD_URL` in `src/App.jsx`. Label preview builds as
 prereleases and do not mark them as the latest production release.
